@@ -1,9 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
+using Listing;
+
+
 WorkWithStrings();
 
 fibonacciNumbers();
+
+WorkWithWeather();
 
 void fibonacciNumbers()
 {
@@ -81,3 +86,22 @@ void WorkWithStrings()
     }
 }
 
+void WorkWithWeather()
+{
+    WeatherData weatherData = new WeatherData();
+    List<WeatherData> list = new List<WeatherData>();
+    while (Console.ReadLine() != null)
+    {
+        Console.Write("Enter the date (dd-mm-yy: ");
+        weatherData.date = Convert.ToString(Console.ReadLine());
+        Console.WriteLine("Enter the Temperature in C: ");
+        weatherData.temperatureC = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        string data = weatherData.date + " " + weatherData.temperatureC;
+        list.Add(weatherData);
+        foreach (var item in list)
+        {
+            Console.WriteLine(weatherData);
+        }
+    }
+}
